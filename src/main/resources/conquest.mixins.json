@@ -3,7 +3,7 @@
 	"package": "stock.conquest.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"GUIMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
