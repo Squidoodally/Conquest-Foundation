@@ -1,2 +1,0 @@
-package stock.conquest.client;
-
