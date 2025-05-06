@@ -1,4 +1,6 @@
 {
+  "attribute.name.generic.stamina": "Stamina",
+  "attribute.name.generic.mana": "Mana",
   "item.conquest.copper_ore": "Copper Ore",
   "item.conquest.copper": "Copper"
 }
