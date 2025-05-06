@@ -1,4 +1,4 @@
-package stock.conquest.client;
+package stock.conquest.client.player_attributes;
 
 import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
