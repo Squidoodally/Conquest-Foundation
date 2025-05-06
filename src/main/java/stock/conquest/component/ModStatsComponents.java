@@ -1,8 +1,8 @@
 package stock.conquest.component;
 
-import
+import org.ladysnake.cca.api.v3.component.ComponentV3;
 
-public interface BaseStatsComponent extends ComponentV3 {
+public interface ModStatsComponents extends ComponentV3 {
     int getStrength();
     void setStrength(int value);
 

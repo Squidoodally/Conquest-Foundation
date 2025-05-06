@@ -1,4 +1,4 @@
-package stock.conquest.client;
+package stock.conquest.client.player_attributes;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.entity.attribute.EntityAttribute;

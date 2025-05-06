@@ -1,17 +1,19 @@
-package stock.conquest.client.stat;
+package stock.conquest.client.player_stats;
 
 import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import stock.conquest.component.ModComponents;
+import stock.conquest.component.PlayerStatsComponents;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class PlayerStatsComponentImpl implements PlayerStatsComponent, AutoSyncedComponent {
+public abstract class PlayerStatsApplier implements PlayerStatsComponents, AutoSyncedComponent {
     private final PlayerEntity player;
     private final Map<String, Integer> stats = new HashMap<>();
 
-    public PlayerStatsComponentImpl(PlayerEntity player) {
+    public PlayerStatsApplier(PlayerEntity player) {
         this.player = player;
 
         // Default values
