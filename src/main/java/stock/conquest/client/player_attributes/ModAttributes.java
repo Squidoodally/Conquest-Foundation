@@ -21,6 +21,6 @@ public class ModAttributes {
     }
 
     public static void register() {
-        // Registration logic is done in the static block, so no further action is required here
+
     }
 }

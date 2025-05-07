@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"stock.conquest.ConquestClient"
+		],
+		"cardinal-components": [
+			"stock.conquest.component.PlayerStatsBinder"
 		]
 	},
 	"mixins": [
@@ -36,5 +39,10 @@
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"custom": {
+		"cardinal-components": [
+			"conquest:player_stats"
+		]
 	}
 }

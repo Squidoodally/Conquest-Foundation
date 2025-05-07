@@ -1,15 +1,18 @@
 package stock.conquest.client.player_stats;
 
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.server.network.ServerPlayerEntity;
 import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
-import stock.conquest.component.ModComponents;
-import stock.conquest.component.PlayerStatsComponents;
+import stock.conquest.component.PlayerStatsBinder;
+import stock.conquest.component.PlayerStatsComponentExtender;
+import stock.conquest.scoreboard.StatScoreboardUpdater;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class PlayerStatsApplier implements PlayerStatsComponents, AutoSyncedComponent {
+public class PlayerStatsApplier implements PlayerStatsComponentExtender, AutoSyncedComponent {
     private final PlayerEntity player;
     private final Map<String, Integer> stats = new HashMap<>();
 
@@ -34,7 +37,10 @@ public abstract class PlayerStatsApplier implements PlayerStatsComponents, AutoS
     @Override
     public void setStat(String key, int value) {
         stats.put(key, value);
-        ModComponents.PLAYER_STATS.sync(player);
+        PlayerStatsBinder.PLAYER_STATS.sync(player);
+        if (!player.getWorld().isClient && player instanceof ServerPlayerEntity serverPlayer) {
+            StatScoreboardUpdater.updateScoreboard(serverPlayer);
+        }
     }
 
     @Override
@@ -58,5 +64,49 @@ public abstract class PlayerStatsApplier implements PlayerStatsComponents, AutoS
         for (Map.Entry<String, Integer> entry : stats.entrySet()) {
             tag.putInt(entry.getKey(), entry.getValue());
         }
+    }
+
+    @Override
+    public void readFromNbt(NbtCompound nbtCompound, RegistryWrapper.WrapperLookup wrapperLookup) {
+
+    }
+
+    @Override
+    public void writeToNbt(NbtCompound nbtCompound, RegistryWrapper.WrapperLookup wrapperLookup) {
+
+    }
+    @Override
+    public int getStrength() {
+        return getStat("Strength");
+    }
+
+    @Override
+    public int getFinesse() {
+        return getStat("Finesse");
+    }
+
+    @Override
+    public int getIntelligence() {
+        return getStat("Intelligence");
+    }
+
+    @Override
+    public int getConstitution() {
+        return getStat("Constitution");
+    }
+
+    @Override
+    public int getWillpower() {
+        return getStat("Willpower");
+    }
+
+    @Override
+    public int getSpeed() {
+        return getStat("Speed");
+    }
+
+    @Override
+    public int getLuck() {
+        return getStat("Luck");
     }
 }

@@ -1,6 +1,7 @@
 {
   "attribute.name.generic.stamina": "Stamina",
   "attribute.name.generic.mana": "Mana",
+  "command.setstat.success": "Set stat %s to %d",
   "item.conquest.copper_ore": "Copper Ore",
   "item.conquest.copper": "Copper"
 }

@@ -1,9 +1,8 @@
-package stock.conquest.client.stat;
+package stock.conquest.client.player_stats;
 
 import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
-import stock.conquest.component.ModComponents;
+import stock.conquest.component.PlayerStatsBinder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +37,7 @@ public abstract class ModStats implements AutoSyncedComponent {
 
     public void setStat(String statKey, int value) {
         stats.put(statKey, value);
-        ModComponents.PLAYER_STATS.sync(player);  // You may need custom sync logic here
+        PlayerStatsBinder.PLAYER_STATS.sync(player);
+
     }
 }
