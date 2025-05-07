@@ -7,7 +7,7 @@ import stock.conquest.component.PlayerStatsBinder;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class ModStats implements AutoSyncedComponent {
+public abstract class PlayerStats implements AutoSyncedComponent {
     private final PlayerEntity player;
     private final Map<String, Integer> stats = new HashMap<>();
 
@@ -19,9 +19,8 @@ public abstract class ModStats implements AutoSyncedComponent {
     public static final String SPEED_KEY = "Speed";
     public static final String LUCK_KEY = "Luck";
 
-    public ModStats(PlayerEntity player) {
+    public PlayerStats(PlayerEntity player) {
         this.player = player;
-        // Initialize all stats to 0
         stats.put(STRENGTH_KEY, 0);
         stats.put(FINESSE_KEY, 0);
         stats.put(INTELLIGENCE_KEY, 0);
@@ -38,6 +37,5 @@ public abstract class ModStats implements AutoSyncedComponent {
     public void setStat(String statKey, int value) {
         stats.put(statKey, value);
         PlayerStatsBinder.PLAYER_STATS.sync(player);
-
     }
 }

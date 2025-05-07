@@ -25,7 +25,9 @@
 			"stock.conquest.ConquestClient"
 		],
 		"cardinal-components": [
-			"stock.conquest.component.PlayerStatsBinder"
+			"stock.conquest.component.PlayerStatsBinder",
+			"stock.conquest.component.PlayerAttributesBinder",
+			"stock.conquest.component.PlayerSkillsBinder"
 		]
 	},
 	"mixins": [
@@ -42,7 +44,9 @@
 	},
 	"custom": {
 		"cardinal-components": [
-			"conquest:player_stats"
+			"conquest:player_stats",
+			"conquest:player_attributes",
+			"conquest:player_skills"
 		]
 	}
 }
