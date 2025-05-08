@@ -9,7 +9,7 @@ import java.util.Map;
 
 public abstract class PlayerSkills implements AutoSyncedComponent {
     private final PlayerEntity player;
-    private final Map<String, Integer> skills = new HashMap<>();
+    private final Map<String, Float> skills = new HashMap<>();
 
     public static final String SKILL_BLADE_KEY = "Blade";
     public static final String SKILL_BLUNT_KEY = "Blunt";
@@ -29,28 +29,28 @@ public abstract class PlayerSkills implements AutoSyncedComponent {
 
     public PlayerSkills(PlayerEntity player) {
         this.player = player;
-        skills.put(SKILL_BLADE_KEY, 0);
-        skills.put(SKILL_BLUNT_KEY, 0);
-        skills.put(SKILL_THRUST_KEY, 0);
-        skills.put(SKILL_MARKSMAN_KEY, 0);
-        skills.put(SKILL_BLOCK_KEY, 0);
-        skills.put(SKILL_ATHLETICS_KEY, 0);
-        skills.put(SKILL_ACROBATICS_KEY, 0);
-        skills.put(SKILL_ALTERATION_KEY, 0);
-        skills.put(SKILL_DESTRUCTION_KEY, 0);
-        skills.put(SKILL_MYSTICISM_KEY, 0);
-        skills.put(SKILL_RESTORATION_KEY, 0);
-        skills.put(SKILL_ALCHEMY_KEY, 0);
-        skills.put(SKILL_BLACKSMITHING_KEY, 0);
-        skills.put(SKILL_CULINARY_KEY, 0);
-        skills.put(SKILL_MERCANTILE_KEY, 0);
+        skills.put(SKILL_BLADE_KEY, 0f);
+        skills.put(SKILL_BLUNT_KEY, 0f);
+        skills.put(SKILL_THRUST_KEY, 0f);
+        skills.put(SKILL_MARKSMAN_KEY, 0f);
+        skills.put(SKILL_BLOCK_KEY, 0f);
+        skills.put(SKILL_ATHLETICS_KEY, 0f);
+        skills.put(SKILL_ACROBATICS_KEY, 0f);
+        skills.put(SKILL_ALTERATION_KEY, 0f);
+        skills.put(SKILL_DESTRUCTION_KEY, 0f);
+        skills.put(SKILL_MYSTICISM_KEY, 0f);
+        skills.put(SKILL_RESTORATION_KEY, 0f);
+        skills.put(SKILL_ALCHEMY_KEY, 0f);
+        skills.put(SKILL_BLACKSMITHING_KEY, 0f);
+        skills.put(SKILL_CULINARY_KEY, 0f);
+        skills.put(SKILL_MERCANTILE_KEY, 0f);
     }
 
     public float getSkill(String skillKey) {
-        return skills.getOrDefault(skillKey, 0);
+        return skills.getOrDefault(skillKey, 0f);
     }
 
-    public void setSkill(String skillKey, int value) {
+    public void setSkill(String skillKey, float value) {
         skills.put(skillKey, value);
         PlayerSkillsBinder.PLAYER_SKILLS.sync(player);
     }

@@ -14,35 +14,35 @@ import java.util.Map;
 
 public class PlayerSkillsApplier implements PlayerSkillsComponentExtender, AutoSyncedComponent {
     private final PlayerEntity player;
-    private final Map<String, Integer> skills = new HashMap<>();
+    private final Map<String, Float> skills = new HashMap<>();
 
     public PlayerSkillsApplier(PlayerEntity player) {
         this.player = player;
 
-        skills.put(PlayerSkills.SKILL_BLADE_KEY, 0);
-        skills.put(PlayerSkills.SKILL_BLUNT_KEY, 0);
-        skills.put(PlayerSkills.SKILL_THRUST_KEY, 0);
-        skills.put(PlayerSkills.SKILL_MARKSMAN_KEY, 0);
-        skills.put(PlayerSkills.SKILL_BLOCK_KEY, 0);
-        skills.put(PlayerSkills.SKILL_ATHLETICS_KEY, 0);
-        skills.put(PlayerSkills.SKILL_ACROBATICS_KEY, 0);
-        skills.put(PlayerSkills.SKILL_ALTERATION_KEY, 0);
-        skills.put(PlayerSkills.SKILL_DESTRUCTION_KEY, 0);
-        skills.put(PlayerSkills.SKILL_MYSTICISM_KEY, 0);
-        skills.put(PlayerSkills.SKILL_RESTORATION_KEY, 0);
-        skills.put(PlayerSkills.SKILL_ALCHEMY_KEY, 0);
-        skills.put(PlayerSkills.SKILL_BLACKSMITHING_KEY, 0);
-        skills.put(PlayerSkills.SKILL_CULINARY_KEY, 0);
-        skills.put(PlayerSkills.SKILL_MERCANTILE_KEY, 0);
+        skills.put(PlayerSkills.SKILL_BLADE_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_BLUNT_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_THRUST_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_MARKSMAN_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_BLOCK_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_ATHLETICS_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_ACROBATICS_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_ALTERATION_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_DESTRUCTION_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_MYSTICISM_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_RESTORATION_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_ALCHEMY_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_BLACKSMITHING_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_CULINARY_KEY, 0f);
+        skills.put(PlayerSkills.SKILL_MERCANTILE_KEY, 0f);
     }
 
     @Override
-    public int getSkill(String key) {
-        return skills.getOrDefault(key, 0);
+    public float getSkill(String key) {
+        return skills.getOrDefault(key, 0f);
     }
 
     @Override
-    public void setSkill(String key, int value) {
+    public void setSkill(String key, float value) {
         skills.put(key, value);
         PlayerSkillsBinder.PLAYER_SKILLS.sync(player);
         if (!player.getWorld().isClient && player instanceof ServerPlayerEntity serverPlayer) {
@@ -53,8 +53,8 @@ public class PlayerSkillsApplier implements PlayerSkillsComponentExtender, AutoS
     @Override
     public NbtCompound getAllSkills() {
         NbtCompound tag = new NbtCompound();
-        for (Map.Entry<String, Integer> entry : skills.entrySet()) {
-            tag.putInt(entry.getKey(), entry.getValue());
+        for (Map.Entry<String, Float> entry : skills.entrySet()) {
+            tag.putFloat(entry.getKey(), entry.getValue());
         }
         return tag;
     }
@@ -62,14 +62,14 @@ public class PlayerSkillsApplier implements PlayerSkillsComponentExtender, AutoS
     @Override
     public void readFromNbt(NbtCompound tag) {
         for (String key : tag.getKeys()) {
-            skills.put(key, tag.getInt(key));
+            skills.put(key, tag.getFloat(key));
         }
     }
 
     @Override
     public void writeToNbt(NbtCompound tag) {
-        for (Map.Entry<String, Integer> entry : skills.entrySet()) {
-            tag.putInt(entry.getKey(), entry.getValue());
+        for (Map.Entry<String, Float> entry : skills.entrySet()) {
+            tag.putFloat(entry.getKey(), entry.getValue());
         }
     }
 
@@ -85,47 +85,47 @@ public class PlayerSkillsApplier implements PlayerSkillsComponentExtender, AutoS
 
     // Getters for individual skills
     @Override
-    public int getBlade() { return getSkill(PlayerSkills.SKILL_BLADE_KEY); }
+    public float getBlade() { return getSkill(PlayerSkills.SKILL_BLADE_KEY); }
 
     @Override
-    public int getBlunt() { return getSkill(PlayerSkills.SKILL_BLUNT_KEY); }
+    public float getBlunt() { return getSkill(PlayerSkills.SKILL_BLUNT_KEY); }
 
     @Override
-    public int getThrust() { return getSkill(PlayerSkills.SKILL_THRUST_KEY); }
+    public float getThrust() { return getSkill(PlayerSkills.SKILL_THRUST_KEY); }
 
     @Override
-    public int getMarksman() { return getSkill(PlayerSkills.SKILL_MARKSMAN_KEY); }
+    public float getMarksman() { return getSkill(PlayerSkills.SKILL_MARKSMAN_KEY); }
 
     @Override
-    public int getBlock() { return getSkill(PlayerSkills.SKILL_BLOCK_KEY); }
+    public float getBlock() { return getSkill(PlayerSkills.SKILL_BLOCK_KEY); }
 
     @Override
-    public int getAthletics() { return getSkill(PlayerSkills.SKILL_ATHLETICS_KEY); }
+    public float getAthletics() { return getSkill(PlayerSkills.SKILL_ATHLETICS_KEY); }
 
     @Override
-    public int getAcrobatics() { return getSkill(PlayerSkills.SKILL_ACROBATICS_KEY); }
+    public float getAcrobatics() { return getSkill(PlayerSkills.SKILL_ACROBATICS_KEY); }
 
     @Override
-    public int getAlteration() { return getSkill(PlayerSkills.SKILL_ALTERATION_KEY); }
+    public float getAlteration() { return getSkill(PlayerSkills.SKILL_ALTERATION_KEY); }
 
     @Override
-    public int getDestruction() { return getSkill(PlayerSkills.SKILL_DESTRUCTION_KEY); }
+    public float getDestruction() { return getSkill(PlayerSkills.SKILL_DESTRUCTION_KEY); }
 
     @Override
-    public int getMysticism() { return getSkill(PlayerSkills.SKILL_MYSTICISM_KEY); }
+    public float getMysticism() { return getSkill(PlayerSkills.SKILL_MYSTICISM_KEY); }
 
     @Override
-    public int getRestoration() { return getSkill(PlayerSkills.SKILL_RESTORATION_KEY); }
+    public float getRestoration() { return getSkill(PlayerSkills.SKILL_RESTORATION_KEY); }
 
     @Override
-    public int getAlchemy() { return getSkill(PlayerSkills.SKILL_ALCHEMY_KEY); }
+    public float getAlchemy() { return getSkill(PlayerSkills.SKILL_ALCHEMY_KEY); }
 
     @Override
-    public int getBlacksmithing() { return getSkill(PlayerSkills.SKILL_BLACKSMITHING_KEY); }
+    public float getBlacksmithing() { return getSkill(PlayerSkills.SKILL_BLACKSMITHING_KEY); }
 
     @Override
-    public int getCulinary() { return getSkill(PlayerSkills.SKILL_CULINARY_KEY); }
+    public float getCulinary() { return getSkill(PlayerSkills.SKILL_CULINARY_KEY); }
 
     @Override
-    public int getMercantile() { return getSkill(PlayerSkills.SKILL_MERCANTILE_KEY); }
+    public float getMercantile() { return getSkill(PlayerSkills.SKILL_MERCANTILE_KEY); }
 }

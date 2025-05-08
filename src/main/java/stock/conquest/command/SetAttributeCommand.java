@@ -14,6 +14,9 @@ import stock.conquest.scoreboard.AttributeScoreboardUpdater;
 import java.util.Map;
 
 import static stock.conquest.client.player_attributes.PlayerAttributes.*;
+import static stock.conquest.client.player_attributes.PlayerAttributes.PIERCE_DAMAGE_KEY;
+import static stock.conquest.client.player_attributes.PlayerAttributes.RANGED_DAMAGE_KEY;
+import static stock.conquest.client.player_attributes.PlayerAttributes.STRIKE_DAMAGE_KEY;
 
 public class SetAttributeCommand {
 
@@ -32,14 +35,22 @@ public class SetAttributeCommand {
             Map.entry("slash_defense", SLASH_DEFENSE_KEY),
             Map.entry("strike_defense", STRIKE_DEFENSE_KEY),
             Map.entry("pierce_defense", PIERCE_DEFENSE_KEY),
+            Map.entry("ranged_defense", RANGED_DEFENSE_KEY),
             Map.entry("magical_defense", MAGICAL_DEFENSE_KEY),
             Map.entry("fire_defense", FIRE_DEFENSE_KEY),
             Map.entry("frost_defense", FROST_DEFENSE_KEY),
             Map.entry("shock_defense", SHOCK_DEFENSE_KEY),
             Map.entry("poison_defense", POISON_DEFENSE_KEY),
+            Map.entry("slash_damage", SLASH_DAMAGE_KEY),
+            Map.entry("strike_damage", STRIKE_DAMAGE_KEY),
+            Map.entry("pierce_damage", PIERCE_DAMAGE_KEY),
+            Map.entry("ranged_damage", RANGED_DAMAGE_KEY),
+            Map.entry("magical_damage", MAGICAL_DAMAGE_KEY),
+            Map.entry("fire_damage", FIRE_DAMAGE_KEY),
+            Map.entry("frost_damage", FROST_DAMAGE_KEY),
+            Map.entry("shock_damage", SHOCK_DAMAGE_KEY),
+            Map.entry("poison_damage", POISON_DAMAGE_KEY),
             Map.entry("spell_absorption", SPELL_ABSORPTION_KEY),
-            Map.entry("physical_damage_modifier", PHYSICAL_DAMAGE_MODIFIER_KEY),
-            Map.entry("magical_damage_modifier", MAGICAL_DAMAGE_MODIFIER_KEY),
             Map.entry("stamina_cost_modifier", STAMINA_COST_MODIFIER_KEY),
             Map.entry("mana_cost_modifier", MANA_COST_MODIFIER_KEY),
             Map.entry("fall_damage_received", FALL_DAMAGE_RECEIVED_KEY),

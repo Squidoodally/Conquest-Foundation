@@ -4,26 +4,26 @@ import net.minecraft.nbt.NbtCompound;
 import org.ladysnake.cca.api.v3.component.Component;
 
 public interface PlayerSkillsComponentExtender extends Component {
-    int getSkill(String key);
-    void setSkill(String key, int value);
+    float getSkill(String key);
+    void setSkill(String key, float value);
     NbtCompound getAllSkills();
 
     void readFromNbt(NbtCompound tag);
     void writeToNbt(NbtCompound tag);
 
-    int getBlade();
-    int getBlunt();
-    int getThrust();
-    int getMarksman();
-    int getBlock();
-    int getAthletics();
-    int getAcrobatics();
-    int getAlteration();
-    int getDestruction();
-    int getMysticism();
-    int getRestoration();
-    int getAlchemy();
-    int getBlacksmithing();
-    int getCulinary();
-    int getMercantile();
+    float getBlade();
+    float getBlunt();
+    float getThrust();
+    float getMarksman();
+    float getBlock();
+    float getAthletics();
+    float getAcrobatics();
+    float getAlteration();
+    float getDestruction();
+    float getMysticism();
+    float getRestoration();
+    float getAlchemy();
+    float getBlacksmithing();
+    float getCulinary();
+    float getMercantile();
 }

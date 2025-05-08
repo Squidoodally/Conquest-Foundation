@@ -2,18 +2,19 @@
 	"schemaVersion": 1,
 	"id": "conquest",
 	"version": "${version}",
-	"name": "Conquest",
-	"description": "Base Conquest Mod",
+	"name": "Conquest Foundation",
+	"description": "A base stat, attribute, and skill system for Minecraft using Fabric.",
 	"authors": [
 		"Guess Who"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Squidoodally/Conquest-Foundation",
+		"sources": "https://github.com/Squidoodally/Conquest-Foundation"
 	},
 	"license": "MIT",
 	"icon": "assets/conquest/icon.png",
 	"environment": "*",
+
 	"entrypoints": {
 		"main": [
 			"stock.conquest.Conquest"
@@ -30,18 +31,24 @@
 			"stock.conquest.component.PlayerSkillsBinder"
 		]
 	},
+
 	"mixins": [
 		"conquest.mixins.json"
 	],
+
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cardinal-components-base": "*",
+		"cardinal-components-entity": "*"
 	},
+
 	"suggests": {
-		"another-mod": "*"
+		"modmenu": "*"
 	},
+
 	"custom": {
 		"cardinal-components": [
 			"conquest:player_stats",

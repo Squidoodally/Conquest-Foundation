@@ -36,72 +36,72 @@ public class SkillScoreboardUpdater {
         }
     }
 
-    private static void updateSkill(Scoreboard scoreboard, String playerName, String objectiveName, int value) {
+    private static void updateSkill(Scoreboard scoreboard, String playerName, String objectiveName, float value) {
         ScoreboardObjective objective = scoreboard.getNullableObjective(objectiveName);
         if (objective != null) {
-            scoreboard.getOrCreateScore(ScoreHolder.fromName(playerName), objective).setScore(value);
+            scoreboard.getOrCreateScore(ScoreHolder.fromName(playerName), objective).setScore((int) value);
         }
     }
 
     // Methods to retrieve each player's skill level. These methods assume the player's skills are stored in a component.
 
-    public static int getPlayerBladeSkill(ServerPlayerEntity player) {
+    public static float getPlayerBladeSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getBlade();
     }
 
-    public static int getPlayerBluntSkill(ServerPlayerEntity player) {
+    public static float getPlayerBluntSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getBlunt();
     }
 
-    public static int getPlayerThrustSkill(ServerPlayerEntity player) {
+    public static float getPlayerThrustSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getThrust();
     }
 
-    public static int getPlayerMarksmanSkill(ServerPlayerEntity player) {
+    public static float getPlayerMarksmanSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getMarksman();
     }
 
-    public static int getPlayerBlockSkill(ServerPlayerEntity player) {
+    public static float getPlayerBlockSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getBlock();
     }
 
-    public static int getPlayerAthleticsSkill(ServerPlayerEntity player) {
+    public static float getPlayerAthleticsSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getAthletics();
     }
 
-    public static int getPlayerAcrobaticsSkill(ServerPlayerEntity player) {
+    public static float getPlayerAcrobaticsSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getAcrobatics();
     }
 
-    public static int getPlayerAlterationSkill(ServerPlayerEntity player) {
+    public static float getPlayerAlterationSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getAlteration();
     }
 
-    public static int getPlayerDestructionSkill(ServerPlayerEntity player) {
+    public static float getPlayerDestructionSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getDestruction();
     }
 
-    public static int getPlayerMysticismSkill(ServerPlayerEntity player) {
+    public static float getPlayerMysticismSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getMysticism();
     }
 
-    public static int getPlayerRestorationSkill(ServerPlayerEntity player) {
+    public static float getPlayerRestorationSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getRestoration();
     }
 
-    public static int getPlayerAlchemySkill(ServerPlayerEntity player) {
+    public static float getPlayerAlchemySkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getAlchemy();
     }
 
-    public static int getPlayerBlacksmithingSkill(ServerPlayerEntity player) {
+    public static float getPlayerBlacksmithingSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getBlacksmithing();
     }
 
-    public static int getPlayerCulinarySkill(ServerPlayerEntity player) {
+    public static float getPlayerCulinarySkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getCulinary();
     }
 
-    public static int getPlayerMercantileSkill(ServerPlayerEntity player) {
+    public static float getPlayerMercantileSkill(ServerPlayerEntity player) {
         return player.getComponent(PlayerSkillsBinder.PLAYER_SKILLS).getMercantile();
     }
 }

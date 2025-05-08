@@ -4,43 +4,54 @@ import net.minecraft.nbt.NbtCompound;
 import org.ladysnake.cca.api.v3.component.Component;
 
 public interface PlayerAttributesComponentExtender extends Component {
-    int getAttribute(String key);
-    void setAttribute(String key, int value);
+    // Methods for getting and setting attributes
+    float getAttribute(String key);
+    void setAttribute(String key, float value);
     NbtCompound getAllAttributes();
 
+    // Methods for reading and writing to NBT
     void readFromNbt(NbtCompound tag);
     void writeToNbt(NbtCompound tag);
 
-    int getMaxHealth();
-    int getCurrentHealth();
-    int getHealthRegenerationRate();
-    int getMaxStamina();
-    int getCurrentStamina();
-    int getStaminaRegenerationRate();
-    int getMaxMana();
-    int getCurrentMana();
-    int getManaRegenerationRate();
-    int getArmorRating();
-    int getPoise();
-    int getSlashDefense();
-    int getStrikeDefense();
-    int getPierceDefense();
-    int getMagicalDefense();
-    int getFireDefense();
-    int getFrostDefense();
-    int getShockDefense();
-    int getPoisonDefense();
-    int getSpellAbsorption();
-    int getPhysicalDamageModifier();
-    int getMagicalDamageModifier();
-    int getStaminaCostModifier();
-    int getManaCostModifier();
-    int getFallDamageReceived();
-    int getRunSpeed();
-    int getCrouchSpeed();
-    int getSwimSpeed();
-    int getJumpStrength();
-    int getOxygen();
-    int getPotionEffectiveness();
-    int getDisposition();
+    // Player attributes
+    float getMaxHealth();
+    float getCurrentHealth();
+    float getHealthRegenerationRate();
+    float getMaxStamina();
+    float getCurrentStamina();
+    float getStaminaRegenerationRate();
+    float getMaxMana();
+    float getCurrentMana();
+    float getManaRegenerationRate();
+    float getArmorRating();
+    float getPoise();
+    float getSlashDefense();
+    float getStrikeDefense();
+    float getPierceDefense();
+    float getRangedDefense();
+    float getMagicalDefense();
+    float getFireDefense();
+    float getFrostDefense();
+    float getShockDefense();
+    float getPoisonDefense();
+    float getSlashDamage();
+    float getStrikeDamage();
+    float getPierceDamage();
+    float getRangedDamage();
+    float getMagicalDamage();
+    float getFireDamage();
+    float getFrostDamage();
+    float getShockDamage();
+    float getPoisonDamage();
+    float getSpellAbsorption();
+    float getStaminaCostModifier();
+    float getManaCostModifier();
+    float getFallDamageReceived();
+    float getRunSpeed();
+    float getCrouchSpeed();
+    float getSwimSpeed();
+    float getJumpStrength();
+    float getOxygen();
+    float getPotionEffectiveness();
+    float getDisposition();
 }
